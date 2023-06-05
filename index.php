@@ -76,6 +76,21 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
             <div class="card">
                 <div class="card-header">
                     Lista de Clientes
+                    <!-- INICIO BUSCADOR -->
+                    <input type="text" id=buscador class=" form-control form-control-sm" placeholder="Buscar..."> 
+                    <!-- INICIO JQUERY -->
+                    <script>
+                        $(document).ready(function() {
+                            $("#buscador").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $("#db_clientes tr").filter(function() {
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            });
+                        });
+                    </script>
+                    <!--FIN  JQUERY -->
+                    <!-- FIN BUSCADOR -->
                 </div>
                 <div class="p-4">
                     <table class="table align-middle">
@@ -89,7 +104,7 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
                                 <th scope="col" colspan="2">Opciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="db_clientes">
 
                             <?php
                             foreach ($clientes as $dato) {
@@ -97,15 +112,15 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
                                 <tr>
                                     <td scope="row">
-                                    <?php echo $dato->DNI; ?></td>
+                                        <?php echo $dato->DNI; ?></td>
                                     <td><?php echo $dato->Nombre; ?></td>
                                     <td><?php echo $dato->Apellido; ?></td>
                                     <td><?php echo $dato->Sexo; ?></td>
                                     <td><?php echo $dato->numero_de_telefono; ?></td>
 
-                                    <td><a class="text-success" href="editar.php?DNI=<?php echo $dato->DNI;?>">
-                                    <i class="bi bi-pencil-square"></i></a></td>
-                                    
+                                    <td><a class="text-success" href="editar.php?DNI=<?php echo $dato->DNI; ?>">
+                                            <i class="bi bi-pencil-square"></i></a></td>
+
                                     <td><a onclick="return confirm('Estas seguro de eliminar?');
                                 " class="text-danger" href="eliminar.php?DNI=<?php echo $dato->DNI; ?>"><i class="bi bi-trash"></i></a></td>
                                 </tr>
@@ -139,8 +154,11 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
                         <input type="text" class="form-control" name="txtApellido" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Sexo: </label>
-                        <input type="text" class="form-control" name="txtSexo" autofocus required>
+                        <label class="form-label">Sexo: <br>
+                    </label>
+                        <!-- <input type="text" class="form-control" name="txtSexo" autofocus required> -->
+                        <input type="radio" name="txtSexo" value="Masculino" required="required" /> Masculino
+                        <input type="radio" name="txtSexo" value="Femenino" required="required" /> Femenino
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Telefono: </label>
