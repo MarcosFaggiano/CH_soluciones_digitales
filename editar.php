@@ -16,7 +16,7 @@ $clientes = $sentencia->fetch(PDO::FETCH_OBJ);
 // print_r($clientes);
 ?>
 
-<div class="container mt-5">
+<div class="container mt-5" style=" height:600px">
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card">
@@ -27,23 +27,23 @@ $clientes = $sentencia->fetch(PDO::FETCH_OBJ);
                 <form class="p-4" method="POST" action="editarProceso.php">
                     <div class="mb-3">
                         <label class="form-label">DNI: </label>
-                        <input type="number" class="form-control" name="txtDNI" required value="<?php echo $clientes->DNI; ?>">
+                        <input type="number" class="form-control" style=" height: 30px" name="txtDNI" required value="<?php echo $clientes->DNI; ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nombre: </label>
-                        <input type="text" class="form-control" name="txtNombre" required value="<?php echo $clientes->Nombre; ?>">
+                        <input type="text" class="form-control" style=" height: 30px" name="txtNombre" required value="<?php echo $clientes->Nombre; ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Apellido: </label>
-                        <input type="text" class="form-control" name="txtApellido" required value="<?php echo $clientes->Apellido; ?>">
+                        <input type="text" class="form-control" style=" height: 30px" name="txtApellido" required value="<?php echo $clientes->Apellido; ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Sexo: </label>
-                        <input type="text" class="form-control" name="txtSexo" required value="<?php echo $clientes->Sexo; ?>">
+                        <input type="text" class="form-control" style=" height: 30px" name="txtSexo" required value="<?php echo $clientes->Sexo; ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Telefono: </label>
-                        <input type="number" class="form-control" name="txtnumero_de_telefono" required value="<?php echo $clientes->numero_de_telefono; ?>">
+                        <input type="number" class="form-control" style=" height: 30px" name="txtnumero_de_telefono" required value="<?php echo $clientes->numero_de_telefono; ?>">
                     </div>
 
                     <div class="d-grid">

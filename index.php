@@ -77,7 +77,7 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 <div class="card-header">
                     Lista de Clientes
                     <!-- INICIO BUSCADOR -->
-                    <input type="text" id=buscador class=" form-control form-control-sm" placeholder="Buscar..."> 
+                    <input type="text" id=buscador class=" form-control form-control-sm" placeholder="Buscar...">
                     <!-- INICIO JQUERY -->
                     <script>
                         $(document).ready(function() {
@@ -104,6 +104,8 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
                                 <th scope="col" colspan="2">Opciones</th>
                             </tr>
                         </thead>
+
+
                         <tbody id="db_clientes">
 
                             <?php
@@ -130,39 +132,37 @@ $clientes = $sentencia->fetchAll(PDO::FETCH_OBJ);
                             ?>
 
                         </tbody>
+
                     </table>
 
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
+        <div class="col-md-4 " style=" height:600px">
+            <div class="card ">
                 <div class="card-header">
                     Ingresar datos:
                 </div>
                 <form class="p-4" method="POST" action="registrar.php">
                     <div class="mb-3">
-                        <label class="form-label">DNI: </label>
-                        <input type="number" class="form-control" name="txtDNI" autofocus required>
+                        <label class="form-label" style=" height: 10px">DNI:</label>
+                        <input type="number" class="form-control " style=" height: 30px" name="txtDNI" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Nombre: </label>
-                        <input type="text" class="form-control" name="txtNombre" autofocus required>
+                        <label class="form-label" style=" height: 10px">Nombre: </label>
+                        <input type="text" class="form-control" style=" height: 30px" name="txtNombre" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Apellido: </label>
-                        <input type="text" class="form-control" name="txtApellido" autofocus required>
+                        <label class="form-label" style=" height: 10px">Apellido: </label>
+                        <input type="text" class="form-control" style=" height: 30px" name="txtApellido" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Sexo: <br>
-                    </label>
-                        <!-- <input type="text" class="form-control" name="txtSexo" autofocus required> -->
-                        <input type="radio" name="txtSexo" value="Masculino" required="required" /> Masculino
-                        <input type="radio" name="txtSexo" value="Femenino" required="required" /> Femenino
+                        <label class="form-label" style=" height: 10px">Sexo: </label>
+                        <input type="text" class="form-control" style=" height: 30px" name="txtSexo" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Telefono: </label>
-                        <input type="number" class="form-control" name="txtnumero_de_telefono" autofocus required>
+                        <label class="form-label" style=" height: 10px">Telefono: </label>
+                        <input type="number" class="form-control" style=" height: 30px" name="txtnumero_de_telefono" autofocus required>
                     </div>
                     <div class="d-grid">
                         <input type="hidden" name="oculto" value="1">
